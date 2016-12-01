@@ -310,3 +310,14 @@ function fb_mce_before_init( $settings ) {
 	return $settings;
 }
 
+/**
+ @Vince
+*/
+
+function wpdocs_excerpt_more( $more ) {
+    return '<p class="right-align"> 
+		<a  href="'.get_the_permalink().'" rel="nofollow" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i> Read More...</a>
+	</p>';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+

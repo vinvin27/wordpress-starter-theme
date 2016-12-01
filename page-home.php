@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php the_post(); ?>
-<main role="main" class="main cf">
+<main role="main" class="foo main cf">
 	<div class="content">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 			<header class="article-header">

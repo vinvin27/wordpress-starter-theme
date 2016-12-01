@@ -31,6 +31,16 @@
 	<script src="<?php bloginfo('template_directory'); ?>/js/html5shiv.js"></script>
 	<![endif]-->
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+
+	<!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+	<!--Import Google Icon Font-->
+      	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      	<!--Let browser know website is optimized for mobile-->
+      	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   
 	<?php wp_head(); ?>
 </head>
 
@@ -38,9 +48,18 @@
 <!--[if lt IE 7]>
 	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
  <![endif]-->
-<header class="site-header">
-	<h1 class="logo"><a href="<?php echo home_url() ?>/" title="<?php bloginfo( 'name' ) ?>" rel="home"><?php bloginfo( 'name' ) ?></a></h1>
-	<nav role="navigation" class="primary-nav">
-		<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container' => '' ) ); ?>
-	</nav>
-</header>
+	
+<div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a></div>	
+	<ul id="nav-mobile" class="side-nav fixed" style="transform: translateX(0%);">
+        <li class="logo"><a id="logo-container" href="http://materializecss.com/" class="brand-logo">
+            <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg">Your browser does not support SVG</object></a></li>
+        <li class="search">
+          <div class="search-wrapper card">
+            <input id="search"><i class="material-icons">search</i>
+            <div class="search-results"></div>
+          </div>
+        </li>
+ <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container' => '' ) ); ?>
+        <li class="bold"><a href="http://materializecss.com/mobile.html" class="waves-effect waves-teal">Mobile</a></li>
+      </ul>
+   <h1 class="logo"><a href="<?php echo home_url() ?>/" title="<?php bloginfo( 'name' ) ?>" rel="home"><?php bloginfo( 'name' ) ?></a></h1>
